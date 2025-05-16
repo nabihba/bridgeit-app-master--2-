@@ -1,3 +1,4 @@
+
 # BridgeIT
 
 BridgeIT is a platform designed to connect job seekers from the West Bank with global employers, tackling mass unemployment by providing a job marketplace. This app helps job seekers showcase their profiles and connect with potential employers while offering an easy-to-use platform for employers to find top talent.
@@ -12,6 +13,7 @@ BridgeIT is a platform designed to connect job seekers from the West Bank with g
 - [API Integration](#api-integration)
 - [Database Integration](#database-integration)
 - [Project Structure](#project-structure)
+- [Future Plans](#future-plans)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -53,41 +55,33 @@ Ensure you have the following installed:
 ```bash
 git clone https://github.com/nabihba/bridgeit.git
 cd bridgeit
+```
 
+2. Install dependencies:
 
-1. Install dependencies
+```bash
+npm install
+npm install -g expo-cli
+npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-constants expo-status-bar
+npm install react-native react-native-scripts
+```
 
-   ```bash
-   npm install
-   ```
-   ```bash
-   npm install -g expo-cli
-   ```
-   ```bash
-   npx expo install expo-router react-native-safe-area-context react-native-screens expo-linking expo-linking expo-constants expo-status-bar
-   ```
-   ```bash
-   npm install react-native react-native-scripts
-   ```
+3. Start the app:
 
-2. Start the app
+```bash
+npx expo start
+```
 
-   ```bash
-    npx expo start
-   ```
-
-In the output, you'll find options to open the app in a
-
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
+You can run the app on:
+- [Development builds](https://docs.expo.dev/develop/development-builds/introduction/)
 - [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
 - [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+- [Expo Go](https://expo.dev/go)
 
-You can start developing by editing the files inside the **app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+## Project Structure
 
-## Project structure:
- ###Project structure:
-  .
+```
+.
 ├── assets/                     # Images and static files
 ├── components/                 # Reusable UI components
 │   ├── JobSeekerCard.jsx       # Job seeker profile card
@@ -100,27 +94,34 @@ You can start developing by editing the files inside the **app** directory. This
 │   ├── signup.jsx              # Signup page
 │   ├── employerhomepage.jsx    # Employer homepage
 │   ├── jobseekerdetailspage.jsx # Job seeker details page
-|   ├── jobseekersignup.jsx     # Job seeker sign up page
-|   ├── jobseekerhome.jsx       # homepage for job seeker
+│   ├── jobseekersignup.jsx     # Job seeker sign up page
 │   └── jobseekerhome.jsx       # Job seeker homepage
 ├── services/                   # API and database services
 │   └── appwrite.js             # Appwrite service for backend
 ├── app.json                    # Expo configuration
 ├── package.json                # Project dependencies and scripts
 └── README.md                   # This file
+```
 
-## DataBase structure 
-### jobseeker collection
+## Database Structure
 
+### Jobseeker Collection
+
+```json
+{
   "name": "string",
   "profession": "string",
   "experienceYears": "double",
   "funFact": "string",
   "skills": ["string"],
   "location": "string"
+}
+```
 
-### employer/company collection
+### Employer/Company Collection
 
+```json
+{
   "companyName": "string",
   "industry": "string",
   "size": "integer",
@@ -130,5 +131,26 @@ You can start developing by editing the files inside the **app** directory. This
   "location": "string",
   "socialLinks": "string",
   "userId": "string"
+}
+```
 
-  #### If you encounter any errors trying to set up the project either contact me or search in stackflow 
+## Future Plans 🔮🚀
+
+We’ve got big dreams for BridgeIT—and we’re just getting started. Here’s what’s on our radar for the next evolution of the platform:
+
+1. **End-to-End Encryption 🔐**  
+   Every piece of personal and employment-related data will be protected using advanced end-to-end encryption protocols—think **Signal-level** security, not just your average Gmail vibes. Your privacy, fully locked down.
+
+2. **Blockchain-Based Credential Validation 🧾✨**  
+   To eliminate fraud and increase trust, we’ll integrate with platforms like **TrueProfile.io** or **Learning Machine**. This will allow us to **verify academic degrees, certifications, and professional credentials** using secure blockchain technology.
+
+3. **Cross-Border Payroll Integration 💸🌍**  
+   We aim to team up with international payroll solutions like **Deel**, **Remote.com**, or **Oyster**. These partnerships will enable **compliant, seamless, and fast payments across borders**, covering everything from tax handling to local legal compliance.
+
+## Contributing
+
+Pull requests are welcome! For major changes, please open an issue first to discuss what you would like to change. Let’s build something impactful together.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
